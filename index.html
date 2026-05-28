@@ -143,14 +143,29 @@
         .benefit-card h3 { font-size: 1rem; margin-bottom: 8px; }
         .benefit-card p { font-size: 0.9rem; color: var(--text-light); }
 
-        /* DEPOIMENTOS */
-        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .testimonial-card {
-            background: white; padding: 30px; border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;
+        /* LOJAS PARCEIRAS */
+        .stores-section { text-align: center; }
+        .stores-section .subtitle {
+            font-size: 1.1rem; color: var(--text-light);
+            max-width: 680px; margin: 0 auto 50px; line-height: 1.7;
         }
-        .testimonial-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid var(--green-light); }
-        .testimonial-card p { font-style: italic; color: var(--text-light); margin-bottom: 15px; }
+        .stores-grid {
+            display: flex; flex-wrap: wrap;
+            justify-content: center; gap: 28px;
+        }
+        .store-badge {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            width: 160px; height: 130px; border-radius: 22px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+            font-weight: 900; font-size: 1rem; gap: 10px;
+            transition: transform 0.3s, box-shadow 0.3s; cursor: default;
+        }
+        .store-badge:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 12px 32px rgba(0,0,0,0.18); }
+        .store-badge i { font-size: 2.4rem; }
+        .badge-shopee  { background: #ee4d2d; color: #fff; }
+        .badge-ml      { background: #ffe600; color: #2d3277; }
+        .badge-amazon  { background: #232f3e; color: #ff9900; }
+        .badge-petz    { background: #fff; color: #e8390e; border: 2.5px solid #e8390e; }
 
         /* COMO FUNCIONA */
         .steps { background-color: #e8f5e9; border-radius: 20px; text-align: center; margin-bottom: 60px; }
@@ -200,7 +215,7 @@
         <a href="https://chat.whatsapp.com/BmdRox4hSJq0c6cd4uJqWx" class="btn-whatsapp pulse" target="_blank" rel="noopener">
             QUERO ENTRAR NO GRUPO! <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/promotiaeliza/" class="btn-instagram" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/promogateira/" class="btn-instagram" target="_blank" rel="noopener">
             SEGUIR NO INSTAGRAM <i class="fa-brands fa-instagram"></i>
         </a>
     </div>
@@ -233,24 +248,29 @@
     </div>
 </section>
 
-<!-- Depoimentos -->
-<section>
-    <h2>O QUE NOSSOS MEMBROS DIZEM:</h2>
-    <div class="testimonials-grid">
-        <div class="testimonial-card">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Ana Paula" class="testimonial-avatar">
-            <p>"Com as ofertas do grupo, consegui economizar muito na ração super premium da Pipoca. Recomendo para todo mundo!"</p>
-            <h4>Ana Paula & Pipoca 🐶</h4>
+<!-- Lojas Parceiras -->
+<section class="stores-section">
+    <h2>TODO DIA, DAS MELHORES LOJAS DO BRASIL:</h2>
+    <p class="subtitle">
+        Nosso robô vasculha automaticamente as maiores plataformas do e-commerce brasileiro
+        e envia só as promoções com desconto real, direto no seu WhatsApp.
+    </p>
+    <div class="stores-grid">
+        <div class="store-badge badge-shopee">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Shopee
         </div>
-        <div class="testimonial-card">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Roberto" class="testimonial-avatar">
-            <p>"Sempre chego primeiro nas promoções relâmpago. Já economizei mais de R$200 nos últimos meses. Incrível!"</p>
-            <h4>Roberto & Luna 🐱</h4>
+        <div class="store-badge badge-ml">
+            <i class="fa-solid fa-cart-shopping"></i>
+            Mercado Livre
         </div>
-        <div class="testimonial-card">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Fernanda" class="testimonial-avatar">
-            <p>"Adoro receber as novidades primeiro! Já comprei vários produtos exclusivos que vi por lá. Nota 10!"</p>
-            <h4>Fernanda & Fred 🐇</h4>
+        <div class="store-badge badge-amazon">
+            <i class="fa-brands fa-amazon"></i>
+            Amazon
+        </div>
+        <div class="store-badge badge-petz">
+            <i class="fa-solid fa-paw"></i>
+            Petz
         </div>
     </div>
 </section>
@@ -279,7 +299,7 @@
         <a href="https://chat.whatsapp.com/BmdRox4hSJq0c6cd4uJqWx" class="btn-whatsapp pulse" target="_blank" rel="noopener">
             GARANTA SUA VAGA NO GRUPO AGORA! <i class="fa-brands fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/promotiaeliza/" class="btn-instagram" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/promogateira/" class="btn-instagram" target="_blank" rel="noopener">
             SEGUIR NO INSTAGRAM <i class="fa-brands fa-instagram"></i>
         </a>
     </div>
