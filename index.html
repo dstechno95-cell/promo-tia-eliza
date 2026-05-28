@@ -183,12 +183,37 @@
         footer .logo { color: white; margin-bottom: 16px; }
         footer p { margin-top: 8px; font-size: 0.9rem; opacity: 0.75; }
 
+        /* BARRA FIXA INFERIOR */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            z-index: 999;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        .sticky-bar.visible { transform: translateY(0); }
+        .sticky-bar .btn-whatsapp,
+        .sticky-bar .btn-instagram { font-size: 1rem; padding: 12px 24px; }
+
+        /* espaço no footer para a barra não sobrepor */
+        body { padding-bottom: 80px; }
+
         @media (max-width: 768px) {
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.5rem; }
             .steps-flex { flex-direction: column; align-items: center; }
             .step-arrow { transform: rotate(90deg); }
             .btn-whatsapp, .btn-instagram { font-size: 1rem; padding: 14px 24px; width: 100%; max-width: 340px; }
+            .sticky-bar .btn-whatsapp,
+            .sticky-bar .btn-instagram { width: 100%; max-width: 340px; }
         }
     </style>
 </head>
@@ -312,6 +337,26 @@
     </div>
     <p>© 2026 Promo Tia Eliza · Feito com 🐾 para tutores brasileiros</p>
 </footer>
+
+<!-- Barra fixa que aparece ao rolar -->
+<div class="sticky-bar" id="stickyBar">
+    <a href="https://chat.whatsapp.com/BmdRox4hSJq0c6cd4uJqWx" class="btn-whatsapp pulse" target="_blank" rel="noopener">
+        QUERO ENTRAR NO GRUPO! <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/promogateira/" class="btn-instagram" target="_blank" rel="noopener">
+        SEGUIR NO INSTAGRAM <i class="fa-brands fa-instagram"></i>
+    </a>
+</div>
+
+<script>
+    const bar = document.getElementById('stickyBar');
+    const hero = document.querySelector('.hero');
+    const observer = new IntersectionObserver(
+        ([entry]) => bar.classList.toggle('visible', !entry.isIntersecting),
+        { threshold: 0.1 }
+    );
+    observer.observe(hero);
+</script>
 
 </body>
 </html>
